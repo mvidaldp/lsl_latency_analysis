@@ -1,17 +1,17 @@
-## __XDF latency analysis of LSL data streams: Unity (triggered) vs EEG (measured)__
+## XDF latency analysis of LSL data streams: Unity (triggered) vs EEG (measured)
 
-### __Situation__ 
+### Situation
 Every 500ms a beep sound is played and the background color changes one frame from black to white.
 
-#### __Unity (90 FPS):__
+#### Unity (90 FPS):
 - Color change (black or white background)
 - Beep sound (audio playing or not)
-#### __EEG (1024 Hz):__
+#### EEG (1024 Hz):
  - Photodiode (light sensor)
 - Microphone (audio sensor)
 
 
-### Requirements
+### How to run it
 Since it's meant to run on JupyterLab with interactive matplotlib plots, install:
 - Python requirements
 ```bash
