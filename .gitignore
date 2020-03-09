@@ -127,3 +127,7 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+data/final_test.xdf
+data/long2.xdf
+data/long3.xdf
+data/long4.xdf
