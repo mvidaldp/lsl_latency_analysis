@@ -1,8 +1,8 @@
-ipympl  # for interactive plots
-jupyterlab  # better jupyter-notebook management
+ipympl  # for interactive plots in jupyterlab
 matplotlib
 numpy
 pandas
 pyxdf  # read XDF files
 scipy
 seaborn
+tqdm
