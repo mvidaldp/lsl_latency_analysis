@@ -15122,16 +15122,17 @@ a.anchor-link {
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="7.-Conclusions-and-remarks">7. Conclusions and remarks<a class="anchor-link" href="#7.-Conclusions-and-remarks">&#182;</a></h2><ul>
-<li>LSL streams have normally "senseless" time differences when comparing starts and endings (&lt; 600 ms). Not an indicator of a wrong recording.</li>
+<li>LSL streams have normally "senseless" time differences when comparing starts and endings (&lt;600ms). Not an indicator of a wrong recording.</li>
 <li>Stream time info values do not coincide with the recorded ones because dejittering is not taken into account. Not a bug.</li>
 <li>EEG framerate is extremely constant</li>
 <li>Unity framerate is (even in the simplest and lightest Unity project possible) not really constant</li>
 <li>Also Unity:<ul>
-<li>Datapoints next to each other (&lt;1ms) or twice the avg (~22ms)</li>
+<li>1% of samples next to each other (&lt;1ms) or twice the avg (~22ms)</li>
 <li>Skips 1-2% of the triggers</li>
 </ul>
 </li>
 <li>A better CPU on the recorder computer seems to contribute on a more precise aligning of streams</li>
+<li>No difference between: short and long recordings, different Unity builds</li>
 <li>Latency for video ~ 75 ms (std of 0.4 ms)</li>
 <li>Latency for audio ~ 105 ms (std of 4 ms)</li>
 <li>Using LSL for recording Unity and EEG data looks reliable</li>
@@ -15145,7 +15146,7 @@ a.anchor-link {
 <h2 id="8.-Future-outlook">8. Future outlook<a class="anchor-link" href="#8.-Future-outlook">&#182;</a></h2><ul>
 <li>New recordings and data analysis using a "heavy" Unity project</li>
 <li>Try very short click sounds for a better estimation of audio latency</li>
-<li>Clean the repos and comment the code for further use</li>
+<li>Clean the repos and comment the code for further use or easier reproducibility</li>
 </ul>
 
 </div>
