@@ -13258,7 +13258,7 @@ a.anchor-link {
 <h2 id="3.-How-to-use-LSL-(Unity-with-EEG-use-case)">3. How to use LSL (Unity with EEG use case)<a class="anchor-link" href="#3.-How-to-use-LSL-(Unity-with-EEG-use-case)">&#182;</a></h2><p>How to use LSL? General requirements:</p>
 <ul>
 <li>LabRecorder app: <a href="https://github.com/labstreaminglayer/App-LabRecorder/releases">https://github.com/labstreaminglayer/App-LabRecorder/releases</a>
-<img src="img/labrecorder.png" width="35%"></li>
+<img src="img/labrecorder.png" width="50%"></li>
 <li><p><code>liblsl</code> library (<a href="https://github.com/sccn/liblsl/releases/latest">https://github.com/sccn/liblsl/releases/latest</a>) with code defining your data streams</p>
 <p>and/or</p>
 </li>
@@ -13277,7 +13277,7 @@ a.anchor-link {
 <ul>
 <li>LSL community app (e.g. OpenVibe Data Acquisition Server: <a href="http://openvibe.inria.fr/downloads/">http://openvibe.inria.fr/downloads/</a>)</li>
 </ul>
-<p><img src="img/ovas.png" width="35%"></p>
+<p><img src="img/ovas.png" width="50%"></p>
 
 </div>
 </div>
@@ -13327,10 +13327,10 @@ a.anchor-link {
 <h2 id="3.-How-to-use-LSL-(Unity-with-EEG-use-case)">3. How to use LSL (Unity with EEG use case)<a class="anchor-link" href="#3.-How-to-use-LSL-(Unity-with-EEG-use-case)">&#182;</a></h2><p>Where to place <code>liblsl</code> on Unity:</p>
 <ul>
 <li><p><code>liblsl</code>library
-<img src="img/lsl_unity.png" width="30%"></p>
+<img src="img/lsl_unity.png" width="70%"></p>
 </li>
 <li><p><code>LSL.cs</code> class
-<img src="img/lsl_class.png" width="30%"></p>
+<img src="img/lsl_class.png" width="70%"></p>
 </li>
 </ul>
 
@@ -13343,12 +13343,19 @@ a.anchor-link {
 <ul>
 <li><code>liblsl</code> library replacement</li>
 </ul>
-<p><img src="img/openvibe_liblsl.png" width="40%"></p>
+<p><img src="img/openvibe_liblsl.png" width="60%"></p>
 <p><strong>Important:</strong> make sure you share the same <code>liblsl</code> version between the LabRecorder, Unity and your scripts and/or any community LSL app. You can always overwrite the shipped one if you're unsure.</p>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="3.-How-to-use-LSL-(Unity-with-EEG-use-case)">3. How to use LSL (Unity with EEG use case)<a class="anchor-link" href="#3.-How-to-use-LSL-(Unity-with-EEG-use-case)">&#182;</a></h2><p>How to make OpenVibe Acquisition Server (AVAS) work with <code>liblsl</code>:</p>
 <ul>
 <li>LSL configuration file  library "hack"</li>
 </ul>
-<p><img src="img/openvibe_lsl.png" width="40%"></p>
+<p><img src="img/openvibe_lsl.png" width="60%"></p>
 
 </div>
 </div>
@@ -13766,17 +13773,14 @@ However, it worked on the build :)</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="7.-Conclusions-and-remarks">7. Conclusions and remarks<a class="anchor-link" href="#7.-Conclusions-and-remarks">&#182;</a></h2><ul>
-<li>"Senseless" time differences between starts and endings of the data streams are not wrong recording indicators</li>
-<li>Dejittering is not taken into account on streams time information. Not a bug.</li>
-<li>EEG framerate is extremely constant</li>
-<li>Unity framerate is (even in the simplest Unity 2D project possible) not really constant (1% ~0ms or ~2xμms)</li>
-<li>Unity skips 1-2% of the triggers</li>
+<li>Unity skips 1-2% of the triggers (frames) when enforcing it to 90FPS instead of the 50FPS (default)</li>
 <li>A better CPU on the recorder computer seems to contribute on a more precise aligning of streams</li>
-<li>No difference between: short/long recordings, different Unity builds, one/two computers</li>
-<li>The position of the diode on the HMDs affects the latency measurements (±1-2ms)</li>
-<li>Latency for video ~75ms (std of 0.4ms)</li>
-<li>Latency for audio ~132ms (std of 4ms)</li>
-<li><strong>Using LSL for recording Unity and EEG data looks very reliable</strong></li>
+<li>Same goes for a better GPU to keep the framerate as constant as possible</li>
+<li>Latency for video looks pretty constant ~75ms and std of 0.4ms (2D old recordings), ~83ms and std of 0.4-0.7ms (2D and 3D new recordings)</li>
+<li>We assume this latency is project and device dependant. So, test your project to compute your latency!</li>
+<li>Latency for audio ~135ms or higher (std of 3ms-6ms), also project dependant</li>
+<li>Best latency for audio parameter seems to reduce it and also to reduce variance, but still far from usable for EEG (min-max diff &gt; 10ms)</li>
+<li><strong>Using LSL for recording Unity and EEG data looks reliable for image stimuli</strong></li>
 </ul>
 
 </div>
@@ -13785,9 +13789,9 @@ However, it worked on the build :)</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="8.-Future-outlook">8. Future outlook<a class="anchor-link" href="#8.-Future-outlook">&#182;</a></h2><ul>
-<li>New recordings and data analysis using a our Westdrive scenes with the camera moving</li>
+<li>New recordings and data analysis using a our Westdrive scenes with the moving camera</li>
 <li>Redo the recordings in a sound isolated room to see if the audio latency detection improves</li>
-<li>Try a new audio engine if there is any that could help get better results</li>
+<li>Try a new audio engine if there is any that could help getting better results</li>
 </ul>
 
 </div>
@@ -13796,13 +13800,16 @@ However, it worked on the build :)</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Resources">Resources<a class="anchor-link" href="#Resources">&#182;</a></h2><ul>
-<li><a href="https://github.com/sccn/liblsl/releases">Liblsl</a></li>
+<li><a href="https://github.com/sccn/liblsl/releases/latest">Liblsl</a></li>
 <li><a href="https://github.com/labstreaminglayer/App-LabRecorder/releases">LabRecorder</a></li>
 <li><a href="https://github.com/labstreaminglayer/LSL4Unity">LSL4Unity</a></li>
+<li><a href="https://github.com/labstreaminglayer/liblsl-Csharp">liblsl-Csharp</a></li>
 <li><a href="https://github.com/sccn/labstreaminglayer/tree/master/Apps">LSL Apps</a></li>
 <li><a href="https://labstreaminglayer.readthedocs.io/">LSL documentation reference</a></li>
 <li><a href="https://github.com/mvidaldp/lsl_latency_analysis">LSL latency analysis</a></li>
-<li><a href="https://github.com/mvidaldp/black_n_white">Unity latency project</a></li>
+<li><a href="https://github.com/mvidaldp/lsl_in_unity">LSL in Unity</a></li>
+<li><a href="https://docs.google.com/document/d/1NCLiLwMQpt9QKIw7sOM4N62vdDu3Nyw78928Jpz5VIU/edit?usp=sharing">How to install and use LSL tutorial</a></li>
+<li><a href="http://openvibe.inria.fr/downloads/">OpenVibe</a></li>
 <li><a href="https://github.com/mvidaldp/pytonegen">Audio tones generator</a></li>
 </ul>
 
