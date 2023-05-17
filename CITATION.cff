@@ -4,6 +4,5 @@ authors:
 - family-names: "De Palol"
   given-names: "Marc Vidal"
 title: "lsl_latency_analysis"
-version: 1.0.0
 date-released: 2020-08-13 
 url: "https://github.com/mvidaldp/lsl_latency_analysis"
