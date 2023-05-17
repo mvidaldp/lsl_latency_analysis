@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors:
+- family-names: "De Palol"
+  given-names: "Marc Vidal"
+  orcid: "https://orcid.org/0000-0000-0000-0000"
+title: "lsl_latency_analysis"
+version: 1.0.0
+doi: 10.5281/zenodo.1234
+date-released: 2023-05-17
+url: "https://github.com/debnolte/lsl_latency_analysis"
