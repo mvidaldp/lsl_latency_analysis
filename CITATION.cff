@@ -3,6 +3,8 @@ message: "If you use this software, please cite it as below."
 authors:
 - family-names: "Vidal De Palol"
   given-names: "Marc"
+- family-names: "Nolte"
+  given-names: "Debora"
 title: "lsl_latency_analysis"
 date-released: 2020-08-13 
 url: "https://github.com/mvidaldp/lsl_latency_analysis"
